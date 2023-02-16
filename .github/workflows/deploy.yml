@@ -38,6 +38,7 @@ jobs:
           clientSecret: ${{ secrets.PORT_CLIENT_SECRET }}
           identifier: ${{ inputs.service }}-${{ inputs.environment }}-${{ env.SHA_SHORT }}
           blueprint: runningService
+          operation: UPSERT
           properties: |
             {
                "jobUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
@@ -51,3 +52,4 @@ jobs:
                "microservice": "${{ inputs.service }}"
             }
           runId: "${{fromJson(inputs.port_payload).context.runId}}"
+          team: '["Team Red"]'
