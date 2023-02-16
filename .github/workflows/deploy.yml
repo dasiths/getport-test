@@ -43,7 +43,10 @@ jobs:
                "jobUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
                "deployingUser": "${{ github.actor }}",
                "imageTag": "latest",
-               "commitSha": "${{ env.SHA_SHORT }}",
+               "commitSha": "${{ env.SHA_SHORT }}"
+            }
+          relations: |
+            {
                "environment": "${{ inputs.environment }}",
                "microservice": "${{ inputs.service }}"
             }
